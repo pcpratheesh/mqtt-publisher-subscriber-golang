@@ -1,4 +1,4 @@
-module mqtt-producer-consumer-golang
+module mqtt-publisher-subscriber-golang
 
 go 1.20
 
