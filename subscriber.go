@@ -21,13 +21,11 @@ func main() {
 
 	client := mqtt.NewClient(opts)
 	if token := client.Connect(); token.Wait() && token.Error() != nil {
-		fmt.Println("Error connecting to MQTT broker:", token.Error())
-		os.Exit(1)
+		panic(fmt.Sprintf("Error connecting to MQTT broker:", token.Error()))
 	}
 
 	if token := client.Subscribe(consts.Topic, 0, onMessageReceived); token.Wait() && token.Error() != nil {
-		fmt.Println("Error subscribing to topic:", token.Error())
-		os.Exit(1)
+		panic(fmt.Sprintf("Error subscribing to topic:", token.Error()))
 	}
 
 	fmt.Println("Subscribed to topic:", consts.Topic)
