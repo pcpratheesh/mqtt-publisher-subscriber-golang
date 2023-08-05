@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"mqtt-producer-consumer-golang/consts"
+	"mqtt-publisher-subscriber-golang/consts"
 	"os"
 	"os/signal"
 	"syscall"
